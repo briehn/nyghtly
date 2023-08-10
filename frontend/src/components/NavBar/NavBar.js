@@ -25,6 +25,9 @@ function NavBar() {
     if (loggedIn) {
       return (
         <div className="links-nav">
+          <Link className="logged-in-nav-link" to={"/"}>
+            Home
+          </Link>
           <Link className="logged-in-nav-link" to={"/about"}>
             About
           </Link>
@@ -44,6 +47,9 @@ function NavBar() {
       return (
         <>
           <div className="links-auth">
+            <Link className="logged-in-nav-link" to={"/"}>
+              Home
+            </Link>
             <Link className="logged-in-nav-link" to={"/about"}>
               {" "}
               {/* fix janky class name here later... user is logged out when they see this link but we need this class name for spacing purposes*/}
@@ -66,7 +72,7 @@ function NavBar() {
                 onClick={() => setShowLoginModal(false)}
                 src={x}
                 className="form-x"
-                alt="close form"
+                alt="Login Modal"
               />
               <h3 className="modal-title">Log in</h3>
               <LoginForm />
@@ -78,6 +84,7 @@ function NavBar() {
                 onClick={() => setShowSignupModal(false)}
                 src={x}
                 className="form-x"
+                alt="Signup Modal"
               />
               <h3 className="modal-title">Sign Up</h3>
               <SignupForm />
@@ -92,7 +99,7 @@ function NavBar() {
     <>
       <nav id="main-nav">
         <Link id="main-logo-container" className="nav-link" to={"/"}>
-          <img id="main-logo" src={logo} />
+          <img id="main-logo" src={logo} alt="NYGHTLY LOGO" />
           {/* <h1>Nyght</h1> */}
         </Link>
         <div id="nav-links-container">{getLinks()}</div>
