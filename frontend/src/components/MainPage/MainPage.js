@@ -47,11 +47,12 @@ function MainPage() {
   };
 
   // midtown is default neighborhood
-  const [neighborhood, setNeighborhood] = useState("midtown");
+  const [neighborhood, setNeighborhood] = useState("default");
 
   const titleizedNeighborhoods = {
+    default: "Select A Neighborhood",
     midtown: "Midtown",
-    village: "the Village",
+    village: "The Village",
     harlem: "Harlem",
     williamsburg: "Williamsburg",
   };
@@ -59,54 +60,84 @@ function MainPage() {
   return (
     <>
       <main id="main-page-container">
-        <div id="main-page-customization-container">
-          <div id="main-page-dropdown-container">
-            <button onClick={openMenu} id="select-neighborhood-button">
-              Select a Neighborhood
-            </button>
-            {showMenu && (
-              <ul className="neighborhood-dropdown">
-                <li onClick={() => setNeighborhood("midtown")}>Midtown</li>
-                <li onClick={() => setNeighborhood("village")}>The Village</li>
-                <li onClick={() => setNeighborhood("harlem")}>Harlem</li>
-                <li onClick={() => setNeighborhood("williamsburg")}>
-                  Williamsburg
-                </li>
-              </ul>
-            )}
-          </div>
-          <div className="toggle-container">
-            <div
-              className="toggle-switch-label toggle-switch-label-drinks"
-              style={{ fontWeight: "bold" }}
-            >
-              Drinks
-            </div>
-            <div className="toggle-switch">
-              <div className="inner-toggle-switch-container">
-                <input
-                  type="checkbox"
-                  className="checkbox"
-                  name="drinks"
-                  id="drinks"
-                  defaultChecked={checked}
-                  onChange={changeLabel}
-                />
-                <label className="label" htmlFor="drinks">
-                  <span className="inner" />
-                  <span className="switch" />
-                </label>
+        {neighborhood !== "default" && (
+          <>
+            <div id="main-page-customization-container">
+              <div id="main-page-dropdown-container">
+                <button onClick={openMenu} id="select-neighborhood-button">
+                  {titleizedNeighborhoods[neighborhood]}
+                </button>
+                {showMenu && (
+                  <ul className="neighborhood-dropdown">
+                    <li onClick={() => setNeighborhood("midtown")}>Midtown</li>
+                    <li onClick={() => setNeighborhood("village")}>
+                      The Village
+                    </li>
+                    <li onClick={() => setNeighborhood("harlem")}>Harlem</li>
+                    <li onClick={() => setNeighborhood("williamsburg")}>
+                      Williamsburg
+                    </li>
+                  </ul>
+                )}
+              </div>
+              <div className="toggle-container">
+                <div
+                  className="toggle-switch-label toggle-switch-label-drinks"
+                  style={{ fontWeight: "bold" }}
+                >
+                  Drinks
+                </div>
+                <div className="toggle-switch">
+                  <div className="inner-toggle-switch-container">
+                    <input
+                      type="checkbox"
+                      className="checkbox"
+                      name="drinks"
+                      id="drinks"
+                      defaultChecked={checked}
+                      onChange={changeLabel}
+                    />
+                    <label className="label" htmlFor="drinks">
+                      <span className="inner" />
+                      <span className="switch" />
+                    </label>
+                  </div>
+                </div>
+                <div className="toggle-switch-label toggle-switch-label-desserts">
+                  Dessert
+                </div>
               </div>
             </div>
-            <div className="toggle-switch-label toggle-switch-label-desserts">
-              Dessert
+            <h2 id="main-page-subheader">
+              Your proposed plan for the night in{" "}
+              {titleizedNeighborhoods[neighborhood]}:
+            </h2>
+          </>
+        )}
+        {neighborhood === "default" && (
+          <>
+            <h2 id="main-page-subheader">Please Select A Neighborhood</h2>
+            <div id="main-page-customization-container default-loc">
+              <div id="main-page-dropdown-container">
+                <button onClick={openMenu} id="select-neighborhood-button">
+                  Select a Neighborhood
+                </button>
+                {showMenu && (
+                  <ul className="neighborhood-dropdown">
+                    <li onClick={() => setNeighborhood("midtown")}>Midtown</li>
+                    <li onClick={() => setNeighborhood("village")}>
+                      The Village
+                    </li>
+                    <li onClick={() => setNeighborhood("harlem")}>Harlem</li>
+                    <li onClick={() => setNeighborhood("williamsburg")}>
+                      Williamsburg
+                    </li>
+                  </ul>
+                )}
+              </div>
             </div>
-          </div>
-        </div>
-        <h2 id="main-page-subheader">
-          Your proposed plan for the night in{" "}
-          {titleizedNeighborhoods[neighborhood]}:
-        </h2>
+          </>
+        )}
         <Randomizer isDessert={checked} neighborhood={neighborhood} />
       </main>
     </>

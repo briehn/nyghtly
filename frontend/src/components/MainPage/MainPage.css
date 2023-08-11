@@ -213,3 +213,7 @@
 .checkbox:checked + .label .switch {
   right: 0px;
 }
+
+.default-loc {
+  align-items: center;
+}
