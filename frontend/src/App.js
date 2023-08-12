@@ -12,6 +12,8 @@ import ItineraryShowPage from "./components/ItineraryShowPage/ItineraryShowPage"
 import ItineraryEditPage from "./components/ItineraryEditPage/index.js";
 // import ShowContainer from "./components/ItineraryShowPage/ShowContainer";
 import EmailFormPage from "./components/EmailPage/EmailFormPage";
+import LoginForm from "./components/SessionForms/LoginForm_new";
+import SignupForm from "./components/SessionForms/SignupForm_new";
 
 import { getCurrentUser } from "./store/session";
 
@@ -36,6 +38,8 @@ function App() {
           <Route exact path="/about">
             <AboutPage />
           </Route>
+          <AuthRoute exact path="/signup" component={SignupForm}></AuthRoute>
+          <AuthRoute exact path="/login" component={LoginForm}></AuthRoute>
           <ProtectedRoute exact path="/profile" component={ProfilePage} />
           <ProtectedRoute
             exact

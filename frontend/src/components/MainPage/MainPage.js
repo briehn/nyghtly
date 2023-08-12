@@ -124,12 +124,28 @@ function MainPage() {
                 </button>
                 {showMenu && (
                   <ul className="neighborhood-dropdown">
-                    <li onClick={() => setNeighborhood("midtown")}>Midtown</li>
-                    <li onClick={() => setNeighborhood("village")}>
+                    <li
+                      className="dropdown-item"
+                      onClick={() => setNeighborhood("midtown")}
+                    >
+                      Midtown
+                    </li>
+                    <li
+                      className="dropdown-item"
+                      onClick={() => setNeighborhood("village")}
+                    >
                       The Village
                     </li>
-                    <li onClick={() => setNeighborhood("harlem")}>Harlem</li>
-                    <li onClick={() => setNeighborhood("williamsburg")}>
+                    <li
+                      className="dropdown-item"
+                      onClick={() => setNeighborhood("harlem")}
+                    >
+                      Harlem
+                    </li>
+                    <li
+                      className="dropdown-item"
+                      onClick={() => setNeighborhood("williamsburg")}
+                    >
                       Williamsburg
                     </li>
                   </ul>

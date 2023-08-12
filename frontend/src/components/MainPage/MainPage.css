@@ -116,6 +116,12 @@
   z-index: 10;
 }
 
+.dropdown-item {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
 .neighborhood-dropdown > li {
   cursor: pointer;
 }
