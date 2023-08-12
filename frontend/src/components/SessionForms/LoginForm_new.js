@@ -4,6 +4,7 @@ import { login, clearSessionErrors } from "../../store/session";
 import MovingBackground from "./Custom/MovingBackground";
 
 import "./SessionForm.css";
+import "./Custom/MovingBackground.css";
 function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -41,12 +42,12 @@ function LoginForm() {
   };
   return (
     <>
+      <MovingBackground
+        phrases={phrases}
+        upperLimit={upperLimit}
+        lowerLimit={lowerLimit}
+      />
       <div className="session-form-container">
-        <MovingBackground
-          phrases={phrases}
-          upperLimit={upperLimit}
-          lowerLimit={lowerLimit}
-        />
         <form className="session-form" onSubmit={handleSubmit}>
           <div className="errors">{errors?.email}</div>
           <label>
