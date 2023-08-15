@@ -55,41 +55,13 @@ function NavBar() {
               {/* fix janky class name here later... user is logged out when they see this link but we need this class name for spacing purposes*/}
               About
             </Link>
-            <Link
-              id="signup-form-nav-link"
-              className="nav-link"
-              onClick={() => setShowSignupModal(true)}
-            >
+            <Link id="signup-form-nav-link" className="nav-link" to={"/signup"}>
               Sign up
             </Link>
-            <Link className="nav-link" onClick={() => setShowLoginModal(true)}>
+            <Link className="nav-link" to={"/login"}>
               Log in
             </Link>
           </div>
-          {showLoginModal && (
-            <LoginModal onClose={() => setShowLoginModal(false)}>
-              <img
-                onClick={() => setShowLoginModal(false)}
-                src={x}
-                className="form-x"
-                alt="Login Modal"
-              />
-              <h3 className="modal-title">Log in</h3>
-              <LoginForm />
-            </LoginModal>
-          )}
-          {showSignupModal && (
-            <SignupModal onClose={() => setShowSignupModal(false)}>
-              <img
-                onClick={() => setShowSignupModal(false)}
-                src={x}
-                className="form-x"
-                alt="Signup Modal"
-              />
-              <h3 className="modal-title">Sign Up</h3>
-              <SignupForm />
-            </SignupModal>
-          )}
         </>
       );
     }
