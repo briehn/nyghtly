@@ -4,21 +4,14 @@ import "./NavBar.css";
 import { logout } from "../../store/session";
 import logo from "../../assets/images/logo.png";
 import { useState } from "react";
-import { LoginModal, SignupModal } from "../../context/Modal";
-import LoginForm from "../SessionForms/LoginForm";
-import SignupForm from "../SessionForms/SignupForm";
-import x from "../../assets/icons/close.png";
 
 function NavBar() {
   const loggedIn = useSelector((state) => !!state.session.user);
-  const [showLoginModal, setShowLoginModal] = useState(false);
-  const [showSignupModal, setShowSignupModal] = useState(false);
   const dispatch = useDispatch();
 
   const logoutUser = (e) => {
     e.preventDefault();
     dispatch(logout());
-    setShowLoginModal(false);
   };
 
   const getLinks = () => {
