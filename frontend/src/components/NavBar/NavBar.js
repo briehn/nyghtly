@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from "react-redux";
 import "./NavBar.css";
 import { logout } from "../../store/session";
 import logo from "../../assets/images/logo.png";
-import { useState } from "react";
 
 function NavBar() {
   const loggedIn = useSelector((state) => !!state.session.user);
@@ -65,7 +64,6 @@ function NavBar() {
       <nav id="main-nav">
         <Link id="main-logo-container" className="nav-link" to={"/"}>
           <img id="main-logo" src={logo} alt="NYGHTLY LOGO" />
-          {/* <h1>Nyght</h1> */}
         </Link>
         <div id="nav-links-container">{getLinks()}</div>
       </nav>
