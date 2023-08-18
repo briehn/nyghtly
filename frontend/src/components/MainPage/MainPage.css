@@ -122,6 +122,10 @@
   align-items: center;
 }
 
+.dropdown-item:hover {
+  font-weight: bold;
+}
+
 .neighborhood-dropdown > li {
   cursor: pointer;
 }
