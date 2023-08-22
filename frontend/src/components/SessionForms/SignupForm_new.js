@@ -99,59 +99,66 @@ function SignupForm() {
   };
 
   return (
-    <form className="session-form" onSubmit={usernameSubmit}>
-      <label>
-        <span>First name</span>
-        <input
-          type="text"
-          value={firstName}
-          onChange={update("firstName")}
-          placeholder="First name"
-        />
-      </label>
-      <div className="errors">{displayError("firstName")}</div>
-      <label>
-        <span>Last name</span>
-        <input
-          type="text"
-          value={lastName}
-          onChange={update("lastName")}
-          placeholder="Last name"
-        />
-      </label>
-      <div className="errors">{displayError("lastName")}</div>
-      <label>
-        <span>Email</span>
-        <input
-          type="text"
-          value={email}
-          onChange={update("email")}
-          placeholder="Email"
-        />
-      </label>
-      <div className="errors">{displayError("email")}</div>
-      <label>
-        <span>Password</span>
-        <input
-          type="password"
-          value={password}
-          onChange={update("password")}
-          placeholder="Password"
-        />
-      </label>
-      <div className="errors">{displayError("password")}</div>
-      <label>
-        <span>Confirm Password</span>
-        <input
-          type="password"
-          value={password2}
-          onChange={update("password2")}
-          placeholder="Confirm Password"
-        />
-      </label>
-      <div className="errors">{displayError("secondpassword")}</div>
-      <input id="session-form-submit" type="submit" value="Sign Up" />
-    </form>
+    <div className="session-form-container">
+      <form className="session-form" onSubmit={usernameSubmit}>
+        <label>
+          <span>First name</span>
+          <input
+            className="session-form-input"
+            type="text"
+            value={firstName}
+            onChange={update("firstName")}
+            placeholder="First name"
+          />
+        </label>
+        <div className="errors">{displayError("firstName")}</div>
+        <label>
+          <span>Last name</span>
+          <input
+            className="session-form-input"
+            type="text"
+            value={lastName}
+            onChange={update("lastName")}
+            placeholder="Last name"
+          />
+        </label>
+        <div className="errors">{displayError("lastName")}</div>
+        <label>
+          <span>Email</span>
+          <input
+            className="session-form-input"
+            type="text"
+            value={email}
+            onChange={update("email")}
+            placeholder="Email"
+          />
+        </label>
+        <div className="errors">{displayError("email")}</div>
+        <label>
+          <span>Password</span>
+          <input
+            className="session-form-input"
+            type="password"
+            value={password}
+            onChange={update("password")}
+            placeholder="Password"
+          />
+        </label>
+        <div className="errors">{displayError("password")}</div>
+        <label>
+          <span>Confirm Password</span>
+          <input
+            className="session-form-input"
+            type="password"
+            value={password2}
+            onChange={update("password2")}
+            placeholder="Confirm Password"
+          />
+        </label>
+        <div className="errors">{displayError("secondpassword")}</div>
+        <input id="session-form-submit" type="submit" value="Sign Up" />
+      </form>
+    </div>
   );
 }
 
