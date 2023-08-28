@@ -42,11 +42,11 @@ function LoginForm() {
   };
   return (
     <>
-      <MovingBackground
+      {/* <MovingBackground
         phrases={phrases}
         upperLimit={upperLimit}
         lowerLimit={lowerLimit}
-      />
+      /> */}
       <div className="session-form-container">
         <form className="session-form" onSubmit={handleSubmit}>
           <div className="errors">{errors?.email}</div>
