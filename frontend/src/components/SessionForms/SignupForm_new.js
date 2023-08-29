@@ -102,7 +102,6 @@ function SignupForm() {
     <div className="session-form-container">
       <form className="session-form" onSubmit={usernameSubmit}>
         <label>
-          <span>First name</span>
           <input
             className="session-form-input"
             type="text"
@@ -113,7 +112,6 @@ function SignupForm() {
         </label>
         <div className="errors">{displayError("firstName")}</div>
         <label>
-          <span>Last name</span>
           <input
             className="session-form-input"
             type="text"
@@ -124,7 +122,6 @@ function SignupForm() {
         </label>
         <div className="errors">{displayError("lastName")}</div>
         <label>
-          <span>Email</span>
           <input
             className="session-form-input"
             type="text"
@@ -135,7 +132,6 @@ function SignupForm() {
         </label>
         <div className="errors">{displayError("email")}</div>
         <label>
-          <span>Password</span>
           <input
             className="session-form-input"
             type="password"
@@ -146,7 +142,6 @@ function SignupForm() {
         </label>
         <div className="errors">{displayError("password")}</div>
         <label>
-          <span>Confirm Password</span>
           <input
             className="session-form-input"
             type="password"
