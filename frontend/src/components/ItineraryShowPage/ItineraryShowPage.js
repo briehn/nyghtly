@@ -174,12 +174,12 @@ function ItineraryShowPage() {
         <h2 className="itinerary-show-page-subheader" id="map-subheader">
           Where you're going:
         </h2>
-        <MapContainer
+        {/* <MapContainer
           activity={activity}
           restaurant={restaurant}
           bar={bar}
           dessert={dessert}
-        />
+        /> */}
         <div id="itinerary-show-buttons-container">
           <Link
             to={{
