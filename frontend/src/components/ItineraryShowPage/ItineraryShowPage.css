@@ -61,4 +61,12 @@
   width: 25px;
   margin: -1px 0 0 30px;
   position: absolute;
+  cursor: pointer;
+}
+
+.edit-form-input {
+  background: none;
+  border-top: none;
+  border-bottom: none;
+  border-right: none;
 }

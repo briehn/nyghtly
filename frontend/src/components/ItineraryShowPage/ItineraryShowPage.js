@@ -130,6 +130,7 @@ function ItineraryShowPage() {
             {showEditTitleForm && (
               <form onSubmit={handleSubmitUpdateTitle}>
                 <input
+                  className="edit-form-input"
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
                 />
